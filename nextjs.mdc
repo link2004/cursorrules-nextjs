@@ -1,3 +1,9 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+
 Next.jsの原則
 
 1. コア原則
@@ -9,18 +15,23 @@ Next.jsの原則
 
 app/         ルーティング & ページ  
 components/  汎用 UI（再利用可能・ロジックなし）  
-lib/         ユーティリティ関数  
-hooks/       カスタムフック  
-types/       型定義  
+lib/         汎用ユーティリティ関数
+hooks/       汎用カスタムフック、汎用フロントエンドロジック 
+types/       型定義
 constants/   定数  
 config/      設定値・環境変数ラッパー  
 services/    外部 API ラッパーやビジネスロジック  
+features/　機能ごとにまとめたディレクトリ。専門度が高く、凝集度高いものはここ。汎用性高くなったらディレクトリを移動
+  /components UIコンポーネント
+  /hooks　フロントエンドロジック
+  /actions　バックエンドロジック、データフェッチ用server actions
+
 demo/        フロントエンドから実行できる手動テストページ
 
 	•	専用（機能固有）コンポーネント … 対応する page.tsx と同階層
 	•	汎用（再利用可能）コンポーネント … components/ に配置
 
-3. データハンドリング
+1. データハンドリング
 
 依存条件	実装方法
 ユーザー操作に依存しない	server components + Server Actions
