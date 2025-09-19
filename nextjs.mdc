@@ -20,7 +20,7 @@ hooks/       汎用カスタムフック、汎用フロントエンドロジッ�
 types/       型定義
 constants/   定数  
 config/      設定値・環境変数ラッパー  
-services/    外部 API ラッパーやビジネスロジック  
+actions/     汎用バックエンドロジック、データフェッチ用server actions
 features/　機能ごとにまとめたディレクトリ。専門度が高く、凝集度高いものはここ。汎用性高くなったらディレクトリを移動
   /components UIコンポーネント
   /hooks　フロントエンドロジック
